@@ -14,4 +14,4 @@ for line in sys.stdin:
 
 average = wordsum/wordcount
 
-print('%s', average)
+print('%s' % average)
