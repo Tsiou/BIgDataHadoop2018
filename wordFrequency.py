@@ -7,14 +7,11 @@ WORD_RE = re.compile(r"[\w']+")
 class wordFrequency(MRJob):
 
     def mapper(self, _, line):
-        for word in WORD_RE.findall(line):
-            yield (word, 1)
+        yield "chars", len(line)
+        yield "words", len(line.split())
 
-    def combiner(self, word, counts):
-        yield (word, sum(counts))
-
-    def reducer(self, word, counts):
-        yield (sum(counts*len(word)), sum(counts))
+    def reducer(self, key, values):
+        yield key, sum(values)
 
 
 if __name__ == '__main__':
