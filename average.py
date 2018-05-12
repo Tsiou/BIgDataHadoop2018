@@ -1,17 +1,11 @@
-#test function
+import math
 import sys
 
-wordsum = 0
-wordcount = 0
+list =[]
 
 for line in sys.stdin:
+    list += [int(s) for s in line.split() if s.isdigit()]
+    
 
-    line = line.strip()
-    words = line.split()
-    for word in words:
-        wordsum += len(word)
-        wordcount +=1
-
-average = wordsum/wordcount
-
+average = math.floor(float(list[1])/float(list[0]))
 print('%s' % average)
