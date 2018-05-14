@@ -12,6 +12,6 @@ for line in sys.stdin:
         wordsum += len(word)
         wordcount +=1
 
-average = wordsum/wordcount
+average = math.floor(wordsum/wordcount)
 
 print('%s\t%s\n%s\t%s\n%s\t%s\n' % ("average: ",average, "sum: ", wordsum, "count: ", wordcount))
