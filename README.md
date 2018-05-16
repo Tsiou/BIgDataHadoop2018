@@ -4,26 +4,26 @@ This is a repository for the Lesson Big Data of University of Macedonia, Greece 
 
 Requirements:
 
-Create a program that takes text files as input and outputs the words in the files whose length is bigger that the average word length on the files.
+Create a program that takes text files as input and outputs the word and count of the words with a length bigger that the average word length in the files.
 
 Implementation: 
 
+2 cycles of mapreduce.
+-- Cycle 1: output: sum(chars), sum(wordcounts)
+
+-- Input to file, get the average value sum(chars)/sum(wordcounts)
+
+-- Cycle 2: output: word, wordcount
+
+Details:
+
 Map:
 
-Create a map function that receives input and outputs length of each word along with the world itself.
-
-Map(text)
-    <word, 1>
-
-Combiner:
-
-create a combiner that receives input <word, 1> and aggragates into <word, count>
+Create a map function that receives input and outputs length of each line along with the num of words in the line.
 
 Reducer: 
 
-Reduce the output of the combiners to <sum(length), sum(count)>
-
-output will be the total length and count for each reducer.
+Reduce the output of the combiners to <sum(length), sum(count)>.
 
 process the output to get a single value, sum(length)/sum(count) which is the average.
 
@@ -31,12 +31,8 @@ process the output to get a single value, sum(length)/sum(count) which is the av
 
 Map:
 
-Create a function that outputs <word, 1> (same mapper as stage 1)
+Create a function that outputs <word, 1> if length of word is bigger than average found above.
 
-Combiner: 
+Reducer:
 
-remove duplicates
-
-Reduce:
-
-for each word, get the length and emit it if length > average from 1st cycle.
+Sum the occurences of each word, returning <word, sum(counts)>.
