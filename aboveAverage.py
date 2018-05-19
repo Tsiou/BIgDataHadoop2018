@@ -18,4 +18,3 @@ class aboveAverage(MRJob):
 
 if __name__ == '__main__':
     aboveAverage.run()
-
