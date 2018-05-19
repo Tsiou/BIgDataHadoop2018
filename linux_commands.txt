@@ -1,0 +1,19 @@
+run .py files: 
+
+python <filename>.py <inputfile.txt>
+
+examples:
+
+python mapper.py 50words.txt
+
+python mr_word_count.py 50words.txt
+
+running mrJob jobs:
+
+python filename.py inputfiles > outputfile 
+
+to chain jobs:
+
+python filename.py inputfiles > outputfile | python filename.py > outputfile
+
+input for the 2nd job is the stdout of script 1
