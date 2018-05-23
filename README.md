@@ -11,7 +11,7 @@ Implementation:
 2 cycles of mapreduce.
 -- Cycle 1: output: sum(chars), sum(wordcounts)
 
--- Input to file, get the average value sum(chars)/sum(wordcounts)
+-- Input files, get the average value sum(chars)/sum(wordcounts)
 
 -- Cycle 2: output: word, wordcount
 
