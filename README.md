@@ -10,7 +10,7 @@ Implementation:
 
 Map:
 
-Create a map function that receives input and outputs length of each word along with the world itself.
+Create a map function that receives input and outputs length of each word along with the word itself.
 
 Map(text)
     <word, 1>
